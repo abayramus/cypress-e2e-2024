@@ -30,33 +30,46 @@
 
 Cypress.Commands.add('login', (email, password) => {
 
-    //loging linkine tikla
-    cy.get(".header_link.ms-2").click();
-    //killanici adi gir
-    cy.get("#username").type(email);
-    //sifre gir
-    cy.get("#password").type(password);
-    //login butonuna tikla
-    cy.get("button[class='fw-semibold btn btn-primary']").click();
+  //loging linkine tikla
+  cy.get(".header_link.ms-2").click();
+  //killanici adi gir
+  cy.get("#username").type(email);
+  //sifre gir
+  cy.get("#password").type(password);
+  //login butonuna tikla
+  cy.get("button[class='fw-semibold btn btn-primary']").click();
 })
 
 
 // token uretmek icin gerekli olan metot
 Cypress.Commands.add('generateToken', (username, password) => {
-    const body ={
-        username : username,
-        password:password
-    };
+  const body ={
+      username : username,
+      password:password
+  };
 
-    cy.request({
-        method: "POST",
-        url: "https://managementonschools.com/app/auth/login",
-        body: body,
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }).then((response) => {
-        return response.body.token; 
-      });
+  cy.request({
+      method: "POST",
+      url: "https://managementonschools.com/app/auth/login",
+      body: body,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((response) => {
+      return response.body.token; 
+    });
 
 })
+
+// POST REQUEST ICIN REUSABLE BIR METOT OLUSTURALIM
+Cypress.Commands.add("addDean", (token, deanData) => {
+  cy.request({
+    method: "POST",//creating new data
+    url: "https://managementonschools.com/app/dean/save",
+    headers: {
+      Authorization: `${token}`, // Assuming your API uses Bearer token authentication
+      "Content-Type": "application/json",
+    },
+    body: deanData,
+  });
+});

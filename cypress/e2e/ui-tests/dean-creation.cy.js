@@ -10,9 +10,8 @@ describe("User Creation", () => {
     });
 
     cy.fixture("register-data").then((data) => {
-        registrationData = data;
-      });
-
+      registrationData = data;
+    });
   });
 
   beforeEach(() => {
@@ -37,15 +36,13 @@ describe("User Creation", () => {
     deanPage.enterDeanName(registrationData[0].deanName);
     deanPage.enterDeanSurName(registrationData[0].deanSurname);
     deanPage.enterBirthPlace(registrationData[0].city);
-    deanPage.enterDeanGender(registrationData[0].genderMale)
-    deanPage.enterBirthDay(registrationData[0].dateOfBirth)
-    deanPage.enterPhone(registrationData[0].phone)
-    deanPage.enterSSN(registrationData[0].ssn)
-    deanPage.enterUsername(registrationData[0].username)
-    deanPage.enterDeanPassword(registrationData[0].password)
-    deanPage.clickOnDeanSubmit()
-    deanPage.verifyDeanRegistration()
-
-
+    deanPage.enterDeanGender(registrationData[0].genderMale);
+    deanPage.enterBirthDay(registrationData[0].dateOfBirth);
+    deanPage.enterPhone(registrationData[0].phone);
+    deanPage.enterSSN(registrationData[0].ssn);
+    deanPage.enterUsername(registrationData[0].username);
+    deanPage.enterDeanPassword(registrationData[0].password);
+    deanPage.clickOnDeanSubmit();
+    deanPage.verifyDeanRegistration();
   });
 });

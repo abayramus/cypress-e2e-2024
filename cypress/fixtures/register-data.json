@@ -1,12 +1,12 @@
 [
     {
-      "deanName": "abctest1",
-      "deanSurname": "abctest2",
-      "username": "abctest13",
-      "ssn": "045-11-0987",
-      "phone": "145-111-5121",
+      "deanName": "tettt40",
+      "deanSurname": "tettt50",
+      "username": "tettt60",
+      "ssn": "045-51-3131",
+      "phone": "045-511-3131",
       "dateOfBirth": "2000-01-01",
-      "genderMale": "male",
+      "genderMale": "MALE",
       "genderFemale": "female",
       "password": "123456aA",
       "address": "123 main st.",
