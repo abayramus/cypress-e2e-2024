@@ -12,7 +12,9 @@ describe("User Creation", () => {
   });
 
   beforeEach(() => {
-    //her bir it blogundan once bir kez yapmak istediklerimiz yazilacak
+    //her bir it blogundan once bir kez yapmak istediklerimiz yazilacakg
+    console.log('TEST---')
+    console.log(cy.generateUsers(1))
   });
 
   it("create dean", () => {

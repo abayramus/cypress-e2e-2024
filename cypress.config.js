@@ -25,6 +25,6 @@ module.exports = defineConfig({
       })
      
     },
-    baseUrl: "https://dummy.restapiexample.com",
+    baseUrl: "https://www.saucedemo.com/",
   },
 });
